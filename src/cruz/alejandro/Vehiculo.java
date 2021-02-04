@@ -1,7 +1,5 @@
 package cruz.alejandro;
 
-
-
 public abstract class Vehiculo {
 	
 	
@@ -14,6 +12,17 @@ public abstract class Vehiculo {
 
 	public abstract String getTipo();
 
+
+	public String getPatente() {
+		return Patente;
+	}
+
+
+	public void setPatente(String patente) {
+		Patente = patente;
+	}
+	
+	
 	
 
 }

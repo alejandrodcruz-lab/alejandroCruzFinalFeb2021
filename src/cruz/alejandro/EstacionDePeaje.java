@@ -10,8 +10,6 @@ public class EstacionDePeaje {
 
 	private List<Cabina> cabinas;
 
-	private Integer cantidadDeCabinas;
-
 	/*
 	 * Al momento de la creacion de la estacion de peajes se deben crear todas las cabianas
 	 * donde en la posicion 0 hay una cabina de Telepase y el resto de las cabinas son comunes 
@@ -22,7 +20,7 @@ public class EstacionDePeaje {
 	}
 
 	//Metodo que agrega todas las cabinas (No Obligatorio)
-	private void agregarCabinas() {
+	private void agregarCabinas(Cabina cabina) {
 		
 
 		

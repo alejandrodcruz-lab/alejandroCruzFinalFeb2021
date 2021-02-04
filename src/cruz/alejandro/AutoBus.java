@@ -1,17 +1,16 @@
 package cruz.alejandro;
 
-public class AutoBus {
+public class AutoBus extends Vehiculo {
 
 	
 	
 	private Tag tag;
 	
 	public AutoBus(String patente, Tag tag) {
-		
+		super(patente);
+		this.setTag(tag);
 	}
 
-	
-	
 	@Override
 	public String getTipo() {
 		
@@ -23,10 +22,11 @@ public class AutoBus {
 		
 	}
 
-	
-	
-		
-	
-	
+	public Tag getTag() {
+		return tag;
+	}
 
+	public void setTag(Tag tag) {
+		this.tag = tag;
+	}
 }
