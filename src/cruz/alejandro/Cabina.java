@@ -105,6 +105,20 @@ public class Cabina {
 			return false;
 		return true;
 	}
+
+
+
+	public Object getCantidadDeAutosQuePasaron() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+	public Object getRecaudacion() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
