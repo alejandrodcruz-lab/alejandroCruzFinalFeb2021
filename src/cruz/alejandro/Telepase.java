@@ -1,5 +1,4 @@
 package cruz.alejandro;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,15 +13,17 @@ public class Telepase extends Cabina {
 	public Telepase(Integer numero) {
 
 		//siempre al momento de crear un telepase se crea el tag 1 con 200 pesos de carga 
+		super(numero);
 		Tag tagInicial =new Tag (1);
 		tagInicial.setSaldo(200.0);
 		this.cargarTag(tagInicial);
+		tags = new HashSet<Tag>();
 	}
 
 	public Boolean cargarTag(Tag tag) {
 		return tags.add(tag);
+		
 	}
-
 	
 	/*
 	 * Este metodo es pago automatico y en estas cabinas solamente estan habilitados los autobuses
@@ -35,10 +36,25 @@ public class Telepase extends Cabina {
 	 * 3) en caso que el importe que tiene el tag no alcanza para pagar el peaje laza una SaldoInsuficienteError
 	 * 
 	 */
-	public void pagarAutomatico(Vehiculo vehiculo)	{
+	public void pagarAutomatico(Vehiculo vehiculo)throws VehiculoNoPermitidoExceptions, TagNoEncontradoException, SaldoInsuficienteError{	{
+		Double tarifa = 200.0;
+		if(!vehiculo.getTipo().equals("AutoBus")) {
+			throw new VehiculoNoPermitidoExceptions();
+		}else if (vehiculo.getTipo().equals("AutoBus")) {
+			AutoBus c =(AutoBus) vehiculo;
+			if(!tags.contains(c.getTag())) {
+				throw new TagNoEncontradoException();
+			}else if (tags.contains(c.getTag())) {
+				if(c.getTag().getSaldo()<200.0) {
+					throw new SaldoInsuficienteError();
+				}else {
+					c.getTag().setSaldo(c.getTag().getSaldo()-tarifa);
+					}
+				}
+			}
+		}
 	}
-
-
+	
 	//Metodo no obligatorio
 	private void pagarConTelePase(Vehiculo vehiculo) throws SaldoInsuficienteError, TagNoEncontradoException {
 
