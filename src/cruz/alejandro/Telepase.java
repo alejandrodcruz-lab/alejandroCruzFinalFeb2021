@@ -20,7 +20,7 @@ public class Telepase extends Cabina {
 	}
 
 	public Boolean cargarTag(Tag tag) {
-		
+		return tags.add(tag);
 	}
 
 	

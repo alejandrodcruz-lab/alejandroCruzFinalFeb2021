@@ -10,9 +10,9 @@ public class Orden {
 	
 	public String getOrden() {
 		if(orden==1) {
-			return "ascendente";
+			return "asc";
 		}else {
-			return "descendente";
+			return "desc";
 		}
 	}
 	

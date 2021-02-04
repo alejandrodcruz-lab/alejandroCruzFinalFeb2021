@@ -16,6 +16,7 @@ public class Cabina {
 	 */
 	private Map <String, Integer> contadorDeVehiculos;
 	private Integer numero;
+	private Integer contAutos;
 	
 	/*
 	 * 
@@ -48,27 +49,63 @@ public class Cabina {
 	public  void pagar (Vehiculo vehiculo)  {
 		switch (vehiculo.getTipo()) {
 		case "AutoBus":
-			
+			 recaudacion +=  tarifaAutoBus;
+			contadorDeVehiculos.put(vehiculo.getTipo(), contAutos++);
 			break;
 		case "Coche":
-			
+			 recaudacion +=  tarifaCoche;
+			contadorDeVehiculos.put(vehiculo.getTipo(), contAutos++);
 			break;
+
 		case "Moto":
-			
+			 recaudacion +=  tarifaMoto;
+			contadorDeVehiculos.put(vehiculo.getTipo(), contAutos++);
 			break;
 		default:
 			break;
 		}
 
 	}		
-	
 
-	
 	/*
 	 * incrementa el contadorDeVehiculo 
 	 */
 	private  void  contarVehiculo (Vehiculo vehiculo) {
-		
+
+		for (int i = 0; i < contadorDeVehiculos.size(); i++) {
+
+		}
 	}
+
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
+		return result;
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cabina other = (Cabina) obj;
+		if (numero == null) {
+			if (other.numero != null)
+				return false;
+		} else if (!numero.equals(other.numero))
+			return false;
+		return true;
+	}
+	
+	
 	
 }

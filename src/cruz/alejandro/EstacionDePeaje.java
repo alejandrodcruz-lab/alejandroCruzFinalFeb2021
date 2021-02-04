@@ -16,23 +16,28 @@ public class EstacionDePeaje {
 	 */
 	public EstacionDePeaje(Integer cantidadDeCabinas) {
 		
+		cabinas= new ArrayList<Cabina>();		
 
 	}
 
 	//Metodo que agrega todas las cabinas (No Obligatorio)
 	private void agregarCabinas(Cabina cabina) {
-		
-
-		
-
-	}
+			if(!cabinas.contains(cabina)) {
+				cabinas.add(cabina);
+			}
+		};
 
 	/*
 	 * obtiene todas un listado de cabinas ordenas por importe recaudado en forma descendete
 	 */
 	public Set<Cabina> otenerCabinasOrdenadaImporteDescendente(Orden orden) {
-
-		
+		TreeSet<Cabina>ordenar = new TreeSet<Cabina>();
+		ordenar.addAll(cabinas);
+		if(orden.getOrden().equals("asc")) {
+			return ordenar;
+		}else {
+			return ordenar.descendingSet();
+		}
 	}
-
+	
 }
