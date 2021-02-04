@@ -13,9 +13,6 @@ public class Telepase extends Cabina {
 
 	public Telepase(Integer numero) {
 
-		
-		
-		
 		//siempre al momento de crear un telepase se crea el tag 1 con 200 pesos de carga 
 		Tag tagInicial =new Tag (1);
 		tagInicial.setSaldo(200.0);

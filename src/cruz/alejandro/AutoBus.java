@@ -17,9 +17,8 @@ public class AutoBus extends Vehiculo {
 		return "AutoBus";
 	}
 
-	
-	public void recargarTag(Double montoAAgregar) {
-		
+	public void recargarTag(Double recarga) {
+		tag.setSaldo(recarga);
 	}
 
 	public Tag getTag() {

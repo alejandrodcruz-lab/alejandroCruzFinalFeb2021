@@ -46,7 +46,19 @@ public class Cabina {
 	 * Tambien contabiliza la cantidad de vehiculo ejemplo si es moto aumenta en uno el contador de moto
 	 */
 	public  void pagar (Vehiculo vehiculo)  {
-		 
+		switch (vehiculo.getTipo()) {
+		case "AutoBus":
+			
+			break;
+		case "Coche":
+			
+			break;
+		case "Moto":
+			
+			break;
+		default:
+			break;
+		}
 
 	}		
 	
